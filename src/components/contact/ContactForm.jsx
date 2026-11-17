@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, CheckCircle2, AlertCircle, Sparkles, RefreshCw } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Sparkles, RefreshCw, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { APPS } from '../../data/apps';
+
+const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSccbWPDQ1kXBKx0aRnSszMXK9t_QWrmDVmPEFc9FL-9Otl6BA/formResponse';
+const GOOGLE_FORM_VIEW_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSccbWPDQ1kXBKx0aRnSszMXK9t_QWrmDVmPEFc9FL-9Otl6BA/viewform';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -36,13 +39,37 @@ export const ContactForm = () => {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const getTopicLabel = (value) => {
+    if (value === 'general') return 'General Studio Inquiry';
+    if (value === 'beta-access') return 'Upcoming App Beta Access';
+    if (value === 'feature-suggestion') return 'Idea / Feature Suggestion';
+    if (value === 'partnership') return 'Business & Publishing Partnership';
+    const found = APPS.find((a) => a.id === value);
+    return found ? `${found.name} (${found.category})` : value;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setStatus('submitting');
-    // Simulate real network submission to ATS Labs backend/support
-    setTimeout(() => {
+    try {
+      const formBody = new URLSearchParams();
+      formBody.append('entry.62928583', formData.name);
+      formBody.append('entry.773367957', formData.email);
+      formBody.append('entry.2131733913', formData.subject);
+      formBody.append('entry.469189381', getTopicLabel(formData.appInquiry));
+      formBody.append('entry.332523849', formData.message);
+
+      await fetch(GOOGLE_FORM_ACTION_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      });
+
       setStatus('success');
       confetti({
         particleCount: 80,
@@ -50,7 +77,11 @@ export const ContactForm = () => {
         origin: { y: 0.6 },
         colors: ['#38bdf8', '#818cf8', '#c084fc', '#10b981'],
       });
-    }, 900);
+    } catch (err) {
+      console.error('Submission error:', err);
+      // Fallback: still show success or error
+      setStatus('error');
+    }
   };
 
   const handleReset = () => {
@@ -210,6 +241,24 @@ export const ContactForm = () => {
         {errors.message && <p className="text-xs text-rose-400 mt-1.5 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.message}</p>}
       </div>
 
+      {status === 'error' && (
+        <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+            <span>Could not submit directly. You can fill it out on Google Forms instead:</span>
+          </div>
+          <a
+            href={GOOGLE_FORM_VIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-bold underline hover:text-white"
+          >
+            <span>Google Form</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+      )}
+
       <button
         type="submit"
         disabled={status === 'submitting'}
@@ -227,6 +276,23 @@ export const ContactForm = () => {
           </>
         )}
       </button>
+
+      {/* Google Form Link Indicator */}
+      <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
+        <span className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          Responses are recorded directly to Google Forms
+        </span>
+        <a
+          href={GOOGLE_FORM_VIEW_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 transition-colors font-medium"
+        >
+          <span>Open in Google Forms</span>
+          <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
     </form>
   );
 };

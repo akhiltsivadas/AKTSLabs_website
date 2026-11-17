@@ -50,6 +50,21 @@ export const ContactDetails = () => {
               </a>
             </div>
           </div>
+
+          <div className="flex items-start gap-3 text-slate-300">
+            <ExternalLink className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+            <div>
+              <div className="font-semibold text-white">Direct Feedback Form</div>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSccbWPDQ1kXBKx0aRnSszMXK9t_QWrmDVmPEFc9FL-9Otl6BA/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:underline inline-flex items-center gap-1"
+              >
+                <span>Expense Flow Queries Form</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="pt-4 border-t border-slate-800/80">
