@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+    <defs>
+      <linearGradient id="grad-soundwave" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#a855f7"/>
+        <stop offset="100%" stop-color="#581c87"/>
+      </linearGradient>
+      <filter id="shadow-soundwave" x="-10%" y="-10%" width="120%" height="120%">
+        <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#a855f7" flood-opacity="0.35"/>
+      </filter>
+    </defs>
+    <rect width="128" height="128" rx="30" fill="#0c101d"/>
+    <rect width="126" height="126" x="1" y="1" rx="29" fill="url(#grad-soundwave)" fill-opacity="0.15" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    <g filter="url(#shadow-soundwave)">
+      
+      <circle cx="64" cy="64" r="32" fill="#a855f7" fill-opacity="0.25"/>
+      <path d="M44 64V64M54 52V76M64 40V88M74 56V72M84 64V64" stroke="#c084fc" stroke-width="5" stroke-linecap="round"/>
+    
+    </g>
+  </svg>
