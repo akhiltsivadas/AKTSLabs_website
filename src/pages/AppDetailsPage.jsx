@@ -285,7 +285,7 @@ export const AppDetailsPage = () => {
                 </Link>
 
                 <a
-                  href={`mailto:${app.supportEmail || 'support@atslabs.dev'}?subject=Inquiry: ${encodeURIComponent(app.name)}`}
+                  href={`mailto:${app.supportEmail || 'akhiltsivadas@gmail.com'}?subject=Inquiry: ${encodeURIComponent(app.name)}`}
                   className="w-full flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-xs font-semibold text-slate-300 hover:text-white transition-colors"
                 >
                   <span className="flex items-center gap-2">

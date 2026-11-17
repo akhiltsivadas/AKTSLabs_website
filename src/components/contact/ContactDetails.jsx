@@ -17,7 +17,7 @@ export const ContactDetails = () => {
     },
     {
       q: 'How do I suggest a feature or report an issue?',
-      a: 'Send us a message using the form or email us at support@atslabs.dev. We appreciate and review all community ideas and bug reports.',
+      a: 'Send us a message using the form or email us at akhiltsivadas@gmail.com. We appreciate and review all community ideas and bug reports.',
     },
   ];
 
@@ -35,8 +35,8 @@ export const ContactDetails = () => {
             <Mail className="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5" />
             <div>
               <div className="font-semibold text-white">General Inquiries</div>
-              <a href="mailto:hello@atslabs.dev" className="text-indigo-400 hover:underline">
-                hello@atslabs.dev
+              <a href="mailto:akhiltsivadas@gmail.com" className="text-indigo-400 hover:underline">
+                akhiltsivadas@gmail.com
               </a>
             </div>
           </div>
@@ -45,8 +45,8 @@ export const ContactDetails = () => {
             <MessageSquare className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
             <div>
               <div className="font-semibold text-white">Support & Feedback</div>
-              <a href="mailto:support@atslabs.dev" className="text-emerald-400 hover:underline">
-                support@atslabs.dev
+              <a href="mailto:akhiltsivadas@gmail.com" className="text-emerald-400 hover:underline">
+                akhiltsivadas@gmail.com
               </a>
             </div>
           </div>

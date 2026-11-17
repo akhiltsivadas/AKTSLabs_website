@@ -172,8 +172,8 @@ export const PrivacyPolicyPage = () => {
                 </h2>
                 <p className="text-slate-400 text-xs sm:text-sm">
                   If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at{' '}
-                  <a href={`mailto:${app.supportEmail || 'support@atslabs.dev'}`} className="text-emerald-400 hover:underline">
-                    {app.supportEmail || 'support@atslabs.dev'}
+                  <a href={`mailto:${app.supportEmail || 'akhiltsivadas@gmail.com'}`} className="text-emerald-400 hover:underline">
+                    {app.supportEmail || 'akhiltsivadas@gmail.com'}
                   </a>.
                 </p>
               </section>
@@ -240,8 +240,8 @@ export const PrivacyPolicyPage = () => {
               <h2 className="text-base font-bold text-white">4. Questions & Contact</h2>
               <p className="text-slate-400">
                 If you have any questions about our Privacy Policy or any of our applications, please contact us at{' '}
-                <a href="mailto:support@atslabs.dev" className="text-emerald-400 hover:underline">
-                  support@atslabs.dev
+                <a href="mailto:akhiltsivadas@gmail.com" className="text-emerald-400 hover:underline">
+                  akhiltsivadas@gmail.com
                 </a>.
               </p>
             </section>

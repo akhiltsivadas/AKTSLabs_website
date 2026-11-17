@@ -14,7 +14,7 @@ export const APPS = [
     shortDescription: "A simple, offline-first daily spend tracker to monitor expenses, manage categories, and securely back up data to your personal Google Drive.",
     description: "Expense flow-Daily Spend Tracker is an easy-to-use personal expense tracking application created by ATS Labs. Designed for everyday clarity, the core functionality works completely offline so your financial records (transactions, accounts, categories) stay stored locally on your device. It also includes an optional backup feature to keep an encrypted backup file in your own Google Drive.",
     category: "Finance",
-    icon: "/images/apps/expense-flow/icon.svg",
+    icon: "/images/apps/expense-flow/icon.png",
     badge: "Official Release",
     pricing: "Free / Ad-Supported",
     color: {
@@ -47,7 +47,7 @@ export const APPS = [
       "Free to use with AdMob support",
     ],
     privacyPolicy: "/privacy/expense-flow",
-    supportEmail: "support@atslabs.dev",
+    supportEmail: "akhiltsivadas@gmail.com",
     privacyPolicyData: {
       title: "Privacy Policy for ExpenseTracker",
       content: `ATS Labs built the ExpenseTracker app as a Free/Ad-Supported app. This SERVICE is provided by ATS Labs at no cost and is intended for use as is.
@@ -69,7 +69,7 @@ Changes to This Privacy Policy
 We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes.
 
 Contact Us
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at support@atslabs.dev.`
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at akhiltsivadas@gmail.com.`
     }
   }
 ];
