@@ -29,8 +29,8 @@ export const APPS = [
       "/images/apps/expense-flow/screen3.png",
       "/images/apps/expense-flow/screen4.png"
     ],
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.atslabs.expenseflow",
-    packageName: "com.atslabs.expenseflow",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.atslabs.expensetracker",
+    packageName: "com.atslabs.expensetracker",
     version: "1.0.0",
     lastUpdated: "2026-11-13",
     size: "8.5 MB",
